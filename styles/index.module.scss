@@ -1,0 +1,74 @@
+@import './main';
+@import url(/public/fonts/ka1.ttf);
+@import url(/public/fonts/barcade.ttf);
+
+.main {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(211, 211, 211);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    height: 100%;
+    width: 100%;
+    max-width: 850px;
+    padding: 2ch;
+    font-family: 'barcade', sans-serif;
+    font-weight: bold;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: max(10%, 120px) 1fr max(10%, 80px);
+
+    .headerContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .gameContent {
+
+    }
+
+    .buttonContainer {
+        display: grid;
+        margin-top: 1ch;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        column-gap: 2ch;
+
+        .button {
+            padding: 1ch;
+            border-radius: max(2ch, 5%);
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: black 2px solid;
+            filter: drop-shadow(2px 5px 0px rgb(74, 74, 74));
+
+
+            
+            svg {
+                font-size: 4.2ch;
+                color: white;
+            }
+        }
+
+        .leftButton {
+            color: white;
+            background-color: red;
+            position: relative;
+            z-index: 3;
+        }
+
+        .rightButton {
+            color: white;
+            background-color: green;
+        }
+    }
+}
