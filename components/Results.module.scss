@@ -1,3 +1,34 @@
 .container {
     width: auto;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5ch;
+
+    h1 {
+        color: red  ;
+    }
+
+    p {
+        font-size: 0.8ch;
+    }
+
+    span {
+        font-size: 0.6ch;
+        line-height: 1.4ch;
+        color: grey;
+        position: relative;
+
+        &::after {
+            content: ' terrible...';
+            position: absolute;
+            font-size: 0.5ch;
+            color: red;
+            bottom: -10;
+            transform: rotateZ(-30deg);
+        }
+    }
 }

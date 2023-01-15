@@ -8,11 +8,13 @@ import { useEffect, useState } from 'react'
 import Callout from '../components/Callout'
 import Field from '../components/Field'
 import MainMenu from '../components/MainMenu'
+import Results from '../components/Results'
 
 
 export default function Home() {
   // main game loop configuration
   const [playing, setPlaying] = useState(false)
+  const [end, setEnd] = useState(true)
   const [clock, setClock] = useState(0)
 
   // track player position
@@ -48,15 +50,9 @@ export default function Home() {
   const maxCallouts = 1
   useEffect(() => {
     if (clock >= maxCallouts) {
-      setTimeout(() => setPlaying(false), Math.round(Math.random()*300))
+      setTimeout(() => {setPlaying(false); setEnd(true)}, Math.round(Math.random()*300))
     }
   }, [clock])
-  // wrapper on end playing
-  useEffect(() => {
-    if (!playing) {
-      console.log("END")
-    }
-  }, [playing])
 
   return (
     <>
@@ -74,7 +70,9 @@ export default function Home() {
             <span>Can you beat the system?</span>
           </div>
           <div className={styles.gameContent}>
-            {playing ? <Field playerPosition={playerPosition} /> : <MainMenu play={() => setPlaying(true)} />}
+            {playing ? <Field playerPosition={playerPosition} /> : ''}
+            {!playing & !end ? <MainMenu play={() => setPlaying(true)} /> : ''}
+            {end ? <Results /> : ''}
           </div>
           {playing ? <div className={styles.buttonContainer}>
             <div className={`${styles.button} ${styles.leftButton}`} onClick={moveLeft}><BsCaretLeftFill /></div>
