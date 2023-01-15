@@ -1,23 +1,58 @@
 class Statistic {
-    constructor(internPoint = -1, socialLife = -1, CAP = 0) {
-        this.internPoint = internPoint;
+    constructor(socialLife = -10, CAP = 0, health = 0, love = -3) {
         this.socialLife = socialLife;
         this.CAP = CAP;
+        this.heath = health;
+        this.love = love;
+    }
+    
+    getListOfScore() {
+        return [sociallife, CAP, health, love];
+    }
+    
+    getHighest() {
+        this.indexOf(Math.max(this.getListofScores()));
+    }
+    
+    getLowest() {
+        this.indexOf(Math.min(this.getListOfScore()));
     }
 
     updateScore(item) {
-        if (item.getName() == "intern") {
-            this.internPoint += 1;
-        } else if (item.getName() == "socializing") {
+        if (item.getName() == "socialLife") {
             this.socialLife += 1;
-        } else if (item.getName() == "entertainment") {
-            this.CAP -= 1;
-        }
+            this.CAP -= 0.2;
+            this.health -= 1;
+        } else if (item.getName() == "CAP") {
+            this.CAP += 1;
+            this.love -= 1;
+            this.socialLife -= 0.5;
+        } else if (item.getName() == "health") {
+            this.health += 1;
+            this.CAP -= 0.1;
+        } else if (item.getName() == "love") {
+            this.love += 1;
+            this.CAP -= 0.5;
+        } 
         return true;
     }
 
-    getScores() {
-        const scores = [this.internPoint, this.socialLife, this.CAP];
+    getEnding() {
+        //high cap
+        if (this.getHighest() == 1) {
+            //low lovelife or social life
+            if (this.getLowest() == 2 || this.getLowest() == 0) {
+                return 1;
+            }
+            // low health
+            return 2;
+        } else if (this.getLowest() == 1) {
+            //low cap, no job
+            return 3;
+        } else {
+            //normal ending
+            return 4;
+        }
     }
 }
 
