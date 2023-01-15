@@ -50,7 +50,7 @@ const Player = ({ playerPosition }) => {
 // GENERATE EDIBLES
 const iconMap = [
     {
-        path: '../public/icons/beer.svg',
+        path: './icons/beer.svg',
         tag: ''
     },
     {
@@ -110,7 +110,7 @@ const EdibleField = (props) => {
 
     return(
         <div className={styles.ediblesContainer}>
-            <Edible lane={1} onEnd={() => {setCurrent(-1)}} src={iconMap[current]} />
+            {current!==-1 ? <Edible lane={Math.round(Math.random()*3.4)} onEnd={() => {setCurrent(-1)}} src={iconMap[current]} /> : ''}
         </div>
     )
 }
