@@ -29,14 +29,14 @@ export default function Home() {
 
   // const [play] = useSound(boopSfx)
 
-  // useEffect(() => {play()}, [])
+  // useEffect(() => `{play()}, [])
 
   // state to display callout
   const [showCallout, setShowCallout] = useState(false)
   useEffect(() => {
     if (showCallout) {
       // show callout for 5s
-      setTimeout(() => setShowCallout(false), 5000)
+      setTimeout(() => setShowCallout(false), 3000)
     } else {
       //randomly generate callout after 20s
       setTimeout(() => setShowCallout(true), Math.random()*10000+20000)

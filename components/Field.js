@@ -47,11 +47,18 @@ const Player = ({ playerPosition }) => {
     )
 }
 
+// GENERATE EDIBLES
+const iconMap = [
+    {
+        path: '/icons/disco.svg'
+    }
+]
+
 // Edibles
 const EdibleField = () => {
     return(
         <div className={styles.ediblesContainer}>
-            <Edible lane={1} onEnd={() => {}} src={'/icons/gym.svg'} />
+            <Edible lane={1} onEnd={() => {}} src={'/icons/disco.svg'} />
         </div>
     )
 }
