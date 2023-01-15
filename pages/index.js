@@ -7,11 +7,12 @@ import {BsCaretLeftFill, BsCaretRightFill} from 'react-icons/bs'
 import { useEffect, useState } from 'react'
 import Callout from '../components/Callout'
 import Field from '../components/Field'
+import MainMenu from '../components/MainMenu'
 
 
 export default function Home() {
   // main game loop configuration
-  const [playing, setPlaying] = useState(true)
+  const [playing, setPlaying] = useState(false)
 
   // track player position
   const [playerPosition, setPlayerPosition] = useState(1)
@@ -59,12 +60,12 @@ export default function Home() {
             <span>Can you beat the system?</span>
           </div>
           <div className={styles.gameContent}>
-            {playing ? <Field playerPosition={playerPosition} /> : ''}
+            {playing ? <Field playerPosition={playerPosition} /> : <MainMenu play={() => setPlaying(true)} />}
           </div>
-          <div className={styles.buttonContainer}>
+          {playing ? <div className={styles.buttonContainer}>
             <div className={`${styles.button} ${styles.leftButton}`} onClick={moveLeft}><BsCaretLeftFill /></div>
             <div className={`${styles.button} ${styles.rightButton}`} onClick={moveRight}><BsCaretRightFill /></div>
-          </div>
+          </div> : ''}
         </div>
       </main>
     </>

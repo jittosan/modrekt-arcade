@@ -26,7 +26,7 @@
         }
     }
 
-
+    $player-color: rgb(242, 103, 226);
     .playerZone {
         grid-row: 2;
         grid-column: 1 4;
@@ -36,17 +36,95 @@
         border-right: 2px solid black;
         position: relative;
 
-        .player {
-            width: 50px;
-            height: 40px;
-            top:5px;
-            position: absolute;
-            background-color: blue;
-            border: 2px solid black;
-        }
-
         .head {
             background-color: black;
+            height: 28px;
+            width: 35px;
+            border-radius: 0.4em;
+            position: absolute;
+            top: 2px;
+            left: 5px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 3px;
+                left: 8px;
+                width: 20px;
+                height: 1px;
+                background-color: rgb(224, 224, 162); 
+            }
         }
+
+        .playerUp {
+            width: 50px;
+            height: 35px;
+            top:5px;
+            position: absolute;
+            background-color: $player-color;
+            border: 2px solid black;
+            border-radius: 0.4em;
+            filter: drop-shadow(5px 5px 0px rgb(84, 84, 84));
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: -10px;
+                right: 6px;
+                width: 12px;
+                height: 6px;
+                background-color: $player-color;
+                border: solid 2px black;
+                border-radius: 0.6em;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 6px;
+                width: 14px;
+                height: 6px;
+                background-color: $player-color;
+                border: solid 2px black;
+                border-radius: 0.6em;
+            }
+        }
+
+        .playerDown {
+            width: 50px;
+            height: 35px;
+            top: 6px;
+            position: absolute;
+            background-color: $player-color;
+            border: 2px solid black;
+            border-radius: 0.4em;
+            filter: drop-shadow(5px 5px 0px rgb(84, 84, 84));
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: -10px;
+                left: 6px;
+                width: 12px;
+                height: 6px;
+                background-color: $player-color;
+                border: solid 2px black;
+                border-radius: 0.6em;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                right: 6px;
+                width: 14px;
+                height: 6px;
+                background-color: $player-color;
+                border: solid 2px black;
+                border-radius: 0.6em;
+            }
+        }
+
     }
 }

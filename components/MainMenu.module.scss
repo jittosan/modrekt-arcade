@@ -1,0 +1,44 @@
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3ch;
+
+    .button {
+        height: 60px;
+        padding: 1.5ch;
+        border-radius: 0.4em;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: black 3px solid;
+        background-color: red;
+        color: white;
+        width: 80%;
+        filter: drop-shadow(5px 5px 0px grey);
+
+
+        
+        svg {
+            // height: 100%;
+            font-size: 2.5ch;
+            color: white;
+        }
+    }
+
+    p {
+        text-align: center;
+        line-height: 1.2ch;
+        font-size: 0.6ch;
+    }
+
+    span {
+        font-size: 0.4ch;
+        color: grey;
+        line-height: 2ch;
+    }
+}
