@@ -100,10 +100,17 @@ const iconMap = [
 ]
 
 // Edibles
-const EdibleField = () => {
+const EdibleField = (props) => {
+    const [current, setCurrent] = useState(-1)
+    useEffect(() => {
+        if (current===-1) {
+            setCurrent(Math.round(Math.random() * iconMap.length))
+        }
+    }, [current])
+
     return(
         <div className={styles.ediblesContainer}>
-            <Edible lane={1} onEnd={() => {}} src={'/icons/disco.svg'} />
+            <Edible lane={1} onEnd={() => {setCurrent(-1)}} src={iconMap[current]} />
         </div>
     )
 }
