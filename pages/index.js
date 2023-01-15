@@ -13,6 +13,7 @@ import MainMenu from '../components/MainMenu'
 export default function Home() {
   // main game loop configuration
   const [playing, setPlaying] = useState(false)
+  const [clock, setClock] = useState(0)
 
   // track player position
   const [playerPosition, setPlayerPosition] = useState(1)
@@ -38,11 +39,24 @@ export default function Home() {
       // show callout for 5s
       setTimeout(() => setShowCallout(false), 3000)
     } else {
-      //randomly generate callout after 20s
-      setTimeout(() => setShowCallout(true), Math.random()*10000+20000)
+      //randomly generate callout after 20s, keep track of callout count
+      setTimeout(() => {setClock(clock+1);setShowCallout(true)}, Math.random()*10000+20000)
       // setTimeout(() => setShowCallout(true), 2000)
     }
   }, [showCallout])
+  // end after X callouts
+  const maxCallouts = 1
+  useEffect(() => {
+    if (clock >= maxCallouts) {
+      setTimeout(() => setPlaying(false), Math.round(Math.random()*300))
+    }
+  }, [clock])
+  // wrapper on end playing
+  useEffect(() => {
+    if (!playing) {
+      console.log("END")
+    }
+  }, [playing])
 
   return (
     <>

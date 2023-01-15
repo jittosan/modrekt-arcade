@@ -50,7 +50,52 @@ const Player = ({ playerPosition }) => {
 // GENERATE EDIBLES
 const iconMap = [
     {
-        path: '/icons/disco.svg'
+        path: '/icons/beer.svg',
+        tag: ''
+    },
+    {
+        path: '/icons/book.svg',
+        tag: ''
+    },
+    {
+        path: '/icons/disco.svg',
+        tag: ''
+    },
+    {
+        path: '/icons/gym.svg',
+        tag: ''
+    },
+    {
+        path: '/icons/insta.svg',
+        tag: ''
+    },
+    {
+        path: '/icons/love.svg',
+        tag: ''
+    },
+    {
+        path: '/icons/macs.svg',
+        tag: ''
+    },
+    {
+        path: '/icons/mail.svg',
+        tag: ''
+    },
+    {
+        path: '/icons/disco.svg',
+        tag: ''
+    },
+    {
+        path: '/icons/pizza.svg',
+        tag: ''
+    },
+    {
+        path: '/icons/steam.svg',
+        tag: ''
+    },
+    {
+        path: '/icons/tiktok.svg',
+        tag: ''
     }
 ]
 
