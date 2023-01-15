@@ -1,12 +1,36 @@
 import Head from 'next/head'
-import { Inter } from '@next/font/google'
 import styles from '../styles/index.module.scss'
 import {BsCaretLeftFill, BsCaretRightFill} from 'react-icons/bs'
+// import audio elements
+// import useSound from 'use-sound'
+// import mainMenuTrack from '../public/audio/tracks/Main Menu.mp3'
+import { useEffect, useState } from 'react'
+import Callout from '../components/Callout'
+import Field from '../components/Field'
 
-
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  // main game loop configuration
+  const [playing, setPlaying] = useState(true)
+
+
+  // const [play] = useSound(boopSfx)
+
+  // useEffect(() => {play()}, [])
+
+  // state to display callout
+  const [showCallout, setShowCallout] = useState(false)
+  useEffect(() => {
+    if (showCallout) {
+      // show callout for 5s
+      setTimeout(() => setShowCallout(false), 5000)
+    } else {
+      //randomly generate callout after 20s
+      setTimeout(() => setShowCallout(true), Math.random()*10000+20000)
+      // setTimeout(() => setShowCallout(true), 2000)
+    }
+  }, [showCallout])
+
   return (
     <>
       <Head>
@@ -16,13 +40,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
+        {showCallout ? <Callout /> : ''}
         <div className={styles.content}>
           <div className={styles.headerContainer}>
-            <h1>ModRekt</h1>
-            <p>Can you beat the system?</p>
+            <h1>UNI-verse</h1>
+            <span>Can you beat the system?</span>
           </div>
           <div className={styles.gameContent}>
-
+            {playing ? <Field /> : ''}
           </div>
           <div className={styles.buttonContainer}>
             <div className={`${styles.button} ${styles.leftButton}`}><BsCaretLeftFill /></div>

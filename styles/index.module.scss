@@ -10,24 +10,38 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: 'Barcade';
 }
 
 .content {
     height: 100%;
-    width: 100%;
-    max-width: 850px;
+    width: auto;
+    max-width: 450px;
     padding: 2ch;
     font-family: 'barcade', sans-serif;
     font-weight: bold;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: max(10%, 120px) 1fr max(10%, 80px);
+    grid-template-rows: 80px 1fr 80px;
 
     .headerContainer {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
+        text-align: center;
+        
+
+        h1 {
+            font-family: 'KA1';
+            font-size: 2ch;
+            line-height: 1.5ch; 
+        }
+
+        span {
+            line-height: 1.2ch;
+            font-size: 0.6ch;
+        }
     }
 
     .gameContent {
@@ -39,22 +53,24 @@
         margin-top: 1ch;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr;
-        column-gap: 2ch;
+        column-gap: min(15px, 5%);
 
         .button {
-            padding: 1ch;
-            border-radius: max(2ch, 5%);
+            height: 60px;
+            padding: 1.5ch;
+            border-radius: 0.4em;
             font-weight: bold;
             display: flex;
             justify-content: center;
             align-items: center;
-            border: black 2px solid;
-            filter: drop-shadow(2px 5px 0px rgb(74, 74, 74));
+            border: black 3px solid;
+            filter: drop-shadow(5px 5px 0px grey);
 
 
             
             svg {
-                font-size: 4.2ch;
+                // height: 100%;
+                font-size: 2.5ch;
                 color: white;
             }
         }

@@ -1,15 +1,11 @@
 @font-face {
     font-family: 'KA1';
-    font-style: 'bold';
-    font-weight: 700;
-    src: url(/public/fonts/ka1.ttf) format('ttf');
+    src: url(../public/fonts/ka1.ttf);
 }
 
 @font-face {
     font-family: 'Barcade';
-    font-style: 'regular';
-    font-weight: 400;
-    src: url(/public/fonts/barcade.ttf) format('ttf');
+    src: url(../public/fonts/barcade.ttf);
 }
 
 // RESETS
