@@ -50,51 +50,51 @@ const Player = ({ playerPosition }) => {
 // GENERATE EDIBLES
 const iconMap = [
     {
-        path: '/icons/beer.svg',
+        path: '../public/icons/beer.svg',
         tag: ''
     },
     {
-        path: '/icons/book.svg',
+        path: '../public/icons/book.svg',
         tag: ''
     },
     {
-        path: '/icons/disco.svg',
+        path: '../public/icons/disco.svg',
         tag: ''
     },
     {
-        path: '/icons/gym.svg',
+        path: '../public/icons/gym.svg',
         tag: ''
     },
     {
-        path: '/icons/insta.svg',
+        path: '../public/icons/insta.svg',
         tag: ''
     },
     {
-        path: '/icons/love.svg',
+        path: '../public/icons/love.svg',
         tag: ''
     },
     {
-        path: '/icons/macs.svg',
+        path: '../public/icons/macs.svg',
         tag: ''
     },
     {
-        path: '/icons/mail.svg',
+        path: '../public/icons/mail.svg',
         tag: ''
     },
     {
-        path: '/icons/disco.svg',
+        path: '../public/icons/disco.svg',
         tag: ''
     },
     {
-        path: '/icons/pizza.svg',
+        path: '../public/icons/pizza.svg',
         tag: ''
     },
     {
-        path: '/icons/steam.svg',
+        path: '../public/icons/steam.svg',
         tag: ''
     },
     {
-        path: '/icons/tiktok.svg',
+        path: '../public/icons/tiktok.svg',
         tag: ''
     }
 ]
