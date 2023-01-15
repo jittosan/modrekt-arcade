@@ -1,13 +1,23 @@
 .callout {
     position: fixed;
+    z-index: 50;    
     top: 20%;
-    right: 15px;
     width: auto;
     padding: 2ch;
     font-size: 0.6ch;
+    line-height: 1.2ch;
+    max-width: 24ch;
     border-radius: 0.4em;
     height: auto;
     background-color: white;
     border: 3px solid black;
     filter: drop-shadow(5px 5px 0px grey);
+}
+
+.left {
+    left: 15px
+}
+
+.right { 
+    right: 15px
 }

@@ -1,4 +1,3 @@
-import { calculateOverrideValues } from 'next/dist/server/font-utils'
 import React, { useEffect, useState } from 'react'
 import styles from './Field.module.scss'
 
@@ -12,6 +11,7 @@ const Field = (props) => {
                 <Track />
             </div>
             <Player playerPosition={props.playerPosition} />
+            <EdibleField />
         </div>
     )
 }
@@ -43,6 +43,38 @@ const Player = ({ playerPosition }) => {
 
 
             </div>
+        </div>
+    )
+}
+
+// Edibles
+const EdibleField = () => {
+    return(
+        <div className={styles.ediblesContainer}>
+            <Edible lane={1} onEnd={() => {}} src={'/icons/gym.svg'} />
+        </div>
+    )
+}
+
+const Edible = (props) => {
+    // offset
+    const lane = props.lane
+    const leftOffset = {0: '8px', 1: 'calc(25% + 8px)', 2: 'calc(50% + 9px)', 3: 'calc(75% + 9px)'}
+    // field length
+    const fieldHeight = 350
+    // flag to use to rerender for animation
+    const [height, setHeight] = useState(0)
+    useEffect(() => {
+        // edible has reached the end of the field
+        if (height >= fieldHeight) {
+            props.onEnd()                                                                                                                                    
+        } else {
+            setTimeout(() => {setHeight(height+10)}, 200)
+        }
+    }, [height])
+    return(
+        <div className={styles.edible} style={{left: leftOffset[lane], top: `${height}px`}}>
+            <img src={props.src} />
         </div>
     )
 }

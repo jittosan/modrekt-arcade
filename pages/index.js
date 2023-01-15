@@ -53,7 +53,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        {/* {showCallout ? <Callout /> : ''} */}
+        {showCallout & playing ? <Callout /> : ''}
         <div className={styles.content}>
           <div className={styles.headerContainer}>
             <h1>UNI-verse</h1>

@@ -1,4 +1,5 @@
 .track {
+    position: relative;
     width: 100%;
     height: 100%;
     background-color: green;
@@ -126,5 +127,22 @@
             }
         }
 
+    }
+}
+
+
+.ediblesContainer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    // background-color: yellow;
+
+    .edible {
+        position: absolute;
+        top: 10px;
+        aspect-ratio: 1 / 1;
+        width: 15%;
+        filter: drop-shadow(5px 5px 0px rgb(44, 44, 44));
+        margin: 0.1em;
     }
 }
