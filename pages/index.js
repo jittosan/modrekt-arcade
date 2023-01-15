@@ -14,7 +14,7 @@ import Results from '../components/Results'
 export default function Home() {
   // main game loop configuration
   const [playing, setPlaying] = useState(false)
-  const [end, setEnd] = useState(true)
+  const [end, setEnd] = useState(false)
   const [clock, setClock] = useState(0)
 
   // track player position
