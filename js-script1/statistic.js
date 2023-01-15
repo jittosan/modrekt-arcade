@@ -11,11 +11,11 @@ class Statistic {
     }
     
     getHighest() {
-        this.indexOf(Math.max(this.getListofScores()));
+        return this.indexOf(Math.max(this.getListofScores()));
     }
     
     getLowest() {
-        this.indexOf(Math.min(this.getListOfScore()));
+        return this.indexOf(Math.min(this.getListOfScore()));
     }
 
     updateScore(item) {
