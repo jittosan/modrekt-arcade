@@ -50,51 +50,51 @@ const Player = ({ playerPosition }) => {
 // GENERATE EDIBLES
 const iconMap = [
     {
-        path: './icons/beer.svg',
+        path: 'icons/beer.svg',
         tag: ''
     },
     {
-        path: '../public/icons/book.svg',
+        path: 'icons/book.svg',
         tag: ''
     },
     {
-        path: '../public/icons/disco.svg',
+        path: 'icons/disco.svg',
         tag: ''
     },
     {
-        path: '../public/icons/gym.svg',
+        path: 'icons/gym.svg',
         tag: ''
     },
     {
-        path: '../public/icons/insta.svg',
+        path: 'icons/insta.svg',
         tag: ''
     },
     {
-        path: '../public/icons/love.svg',
+        path: 'icons/love.svg',
         tag: ''
     },
     {
-        path: '../public/icons/macs.svg',
+        path: 'icons/macs.svg',
         tag: ''
     },
     {
-        path: '../public/icons/mail.svg',
+        path: 'icons/mail.svg',
         tag: ''
     },
     {
-        path: '../public/icons/disco.svg',
+        path: 'icons/disco.svg',
         tag: ''
     },
     {
-        path: '../public/icons/pizza.svg',
+        path: 'icons/pizza.svg',
         tag: ''
     },
     {
-        path: '../public/icons/steam.svg',
+        path: 'icons/steam.svg',
         tag: ''
     },
     {
-        path: '../public/icons/tiktok.svg',
+        path: 'icons/tiktok.svg',
         tag: ''
     }
 ]
@@ -104,13 +104,14 @@ const EdibleField = (props) => {
     const [current, setCurrent] = useState(-1)
     useEffect(() => {
         if (current===-1) {
-            setCurrent(Math.round(Math.random() * iconMap.length))
+            setCurrent(Math.round(Math.random() * iconMap.length-1))
         }
+        // console.log(icon[current])   
     }, [current])
 
     return(
         <div className={styles.ediblesContainer}>
-            {current!==-1 ? <Edible lane={Math.round(Math.random()*3.4)} onEnd={() => {setCurrent(-1)}} src={iconMap[current]} /> : ''}
+            {current!==-1 ? <Edible lane={Math.round(Math.random()*3.4)} onEnd={() => {setCurrent(-1)}} src={iconMap[current].path} /> : ''}
         </div>
     )
 }
@@ -134,6 +135,7 @@ const Edible = (props) => {
     return(
         <div className={styles.edible} style={{left: leftOffset[lane], top: `${height}px`}}>
             <img src={props.src} />
+            {/* <img src={'icons/beer.svg'} /> */}
         </div>
     )
 }

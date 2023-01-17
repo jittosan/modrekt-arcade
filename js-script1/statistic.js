@@ -1,5 +1,5 @@
 class Statistic {
-    constructor(socialLife = -10, CAP = 0, health = 0, love = -3) {
+    constructor(socialLife = -10, CAP = 0, health = 0, love = -1) {
         this.socialLife = socialLife;
         this.CAP = CAP;
         this.heath = health;
