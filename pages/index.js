@@ -47,7 +47,7 @@ export default function Home() {
     }
   }, [showCallout])
   // end after X callouts
-  const maxCallouts = 5
+  const maxCallouts = 10
   useEffect(() => {
     if (clock >= maxCallouts) {
       setTimeout(() => {setPlaying(false); setEnd(true)}, Math.round(Math.random()*300))
